@@ -4,7 +4,6 @@ const router = express.Router();
 
 const actMod = require('./actions-model');
 const { validateActId, validateAction } = require('./actions-middlware');
-const { validateCompleted } = require('../server-middleware');
 
 router.get('/', (req, res, next) => {
     actMod.get()
@@ -29,7 +28,7 @@ router.post('/', validateAction, (req, res, next) => {
         .catch(next)
 })
 
-router.put('/:id', validateActId, validateAction, validateCompleted, (req, res, next) => {
+router.put('/:id', validateActId, validateAction, (req, res, next) => {
     const {id} = req.params;
     actMod.update(id, req.body)
         .then(upd => res.json(upd))
