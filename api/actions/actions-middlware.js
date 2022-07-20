@@ -1,5 +1,3 @@
-// add middlewares here related to actions
-// add middlewares here related to actions
 const actMod = require('./actions-model')
 module.exports = {
     async validateActId(req, res, next) {

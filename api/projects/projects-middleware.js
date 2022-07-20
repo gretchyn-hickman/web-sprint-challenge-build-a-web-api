@@ -1,4 +1,3 @@
-// add middlewares here related to projects
 const ProjMod = require('./projects-model')
 module.exports = {
     validateProj(req, res, next) {
